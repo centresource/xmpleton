@@ -15,10 +15,10 @@ require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
   gem.name = "xmpleton"
-  gem.homepage = "http://github.com/therubyneck/xmpleton"
+  gem.homepage = "http://github.com/centresource/xmpleton"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{A Ruby XMP reader library for extracting metadata from media files}
+  gem.description = %Q{A Ruby XMP reader library for extracting metadata from media files}
   gem.email = "jeremy@jeremypholland.com"
   gem.authors = ["Jeremy Holland"]
   # dependencies defined in Gemfile

@@ -8,5 +8,7 @@ require 'xmpleton'
 Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each {|f| require f}
 
 RSpec.configure do |config|
-  
+
 end
+
+RESOURCES_PATH = "#{File.dirname(__FILE__)}/resources"
