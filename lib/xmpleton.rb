@@ -3,6 +3,8 @@ require 'nokogiri'
 module Xmpleton
   class Reader
     def initialize(image_file)
+      image_file = image_file.clone
+      image_file.rewind
       binary_data = image_file.read
       xmp_start = binary_data.index '<x:xmpmeta'
       xmp_end = binary_data.index('</x:xmpmeta>')
