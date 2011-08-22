@@ -5,8 +5,8 @@ module Xmpleton
     def initialize(image_file)
       binary_data = image_file.read
       xmp_start = binary_data.index '<x:xmpmeta'
-      xmp_end = binary_data.index('</x:xmpmeta>') + 11
-      @xmp_data = binary_data[xmp_start..xmp_end]
+      xmp_end = binary_data.index('</x:xmpmeta>')
+      @xmp_data = binary_data[xmp_start..xmp_end + 11] if xmp_start and xmp_end
       @xml = Nokogiri::XML.parse(@xmp_data)
     end
 
