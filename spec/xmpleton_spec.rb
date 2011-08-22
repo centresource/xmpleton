@@ -17,13 +17,18 @@ describe Xmpleton::Reader do
       lambda { Xmpleton::Reader.new(f) }.should_not raise_error
     end
 
+    it "should not throw an error if called with one argument that is an IO that does not have any XMP metadata" do
+      f = File.open("#{RESOURCES_PATH}/dud_file.txt")
+      lambda { Xmpleton::Reader.new(f) }.should_not raise_error
+    end
+
     it "should throw an error if called with one argument that is not an IO" do
       lambda { Xmpleton::Reader.new("smeg") }.should raise_error
     end
   end
 
   describe "tags" do
-    it "should appropriately read the tags of the passed image" do
+    it "should appropriately read the tags of the passed image if it has XMP metadata" do
       f = File.open("#{RESOURCES_PATH}/test_img.jpg")
       reader = Xmpleton::Reader.new(f)
       reader.tags.should == [
@@ -33,6 +38,12 @@ describe Xmpleton::Reader do
         "potato captain",
         "beet sauce"
       ]
+    end
+
+    it "should return an empty array if the passed file has no XMP metadata" do
+      f = File.open("#{RESOURCES_PATH}/dud_file.txt")
+      reader = Xmpleton::Reader.new(f)
+      reader.tags.should == []
     end
   end
 end

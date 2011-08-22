@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{xmpleton}
-  s.version = "0.1.0"
+  s.version = "0.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = [%q{Jeremy Holland}]
@@ -26,9 +26,11 @@ Gem::Specification.new do |s|
     "Rakefile",
     "VERSION",
     "lib/xmpleton.rb",
+    "spec/resources/dud_file.txt",
     "spec/resources/test_img.jpg",
     "spec/spec_helper.rb",
-    "spec/xmpleton_spec.rb"
+    "spec/xmpleton_spec.rb",
+    "xmpleton.gemspec"
   ]
   s.homepage = %q{http://github.com/centresource/xmpleton}
   s.licenses = [%q{MIT}]
